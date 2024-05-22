@@ -69,3 +69,33 @@ zoo.add_animal(Bird("Коршун", 4, "средние крылья"))
 zoo.add_animal(Mammal("Мартышка", 3, "серый"))
 zoo.show_animals()
 
+class Staff:
+    def __init__(self, name, role):
+        self.name = name
+        self.role = role
+
+class ZooKeeper(Staff):
+    def __init__(self, name):
+        super().__init__(name, "Смотритель")
+
+    def feed_animal(self, animal):
+        print(f"{self.name} кормит {animal.name}.")
+
+class Veterinarian(Staff):
+    def __init__(self, name):
+        super().__init__(name, "Ветеринар")
+
+    def heal_animal(self, animal):
+        print(f"{self.name} лечит {animal.name}.")
+
+zoo_keeper = ZooKeeper("Иванов Иван Петрович")
+vet = Veterinarian("Сидоров Илья Прокофьевич")
+
+zoo.add_staff(zoo_keeper)
+zoo.add_staff(vet)
+zoo.show_staff()
+
+zoo_keeper.feed_animal(animals[0])
+vet.heal_animal(animals[1])
+
+
