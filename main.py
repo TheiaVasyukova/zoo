@@ -33,3 +33,15 @@ class Reptile(Animal):
     def make_sound(self):
         print(f"{self.name} шипит")
 
+def animal_sound(animals):
+    for animal in animals:
+        animal.make_sound()
+
+animals = [
+    Bird("Дрозд", 2, "небольшие крылья"),
+    Mammal("Тигр", 5, "белый с полосками"),
+    Reptile("Змея", 3, "ядовитая")
+]
+
+animal_sound(animals)
+
