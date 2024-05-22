@@ -45,3 +45,27 @@ animals = [
 
 animal_sound(animals)
 
+class Zoo:
+    def __init__(self):
+        self.animals = []
+        self.staff = []
+
+    def add_animal(self, animal):
+        self.animals.append(animal)
+
+    def add_staff(self, staff):
+        self.staff.append(staff)
+
+    def show_animals(self):
+        for animal in self.animals:
+            print(f"{animal.name}, возраст: {animal.age}")
+
+    def show_staff(self):
+        for member in self.staff:
+            print(f"{member.name}, должность: {member.role}")
+
+zoo = Zoo()
+zoo.add_animal(Bird("Коршун", 4, "средние крылья"))
+zoo.add_animal(Mammal("Мартышка", 3, "серый"))
+zoo.show_animals()
+
